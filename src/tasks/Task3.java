@@ -3,37 +3,29 @@ package tasks;
 import java.util.Scanner;
 
 public class Task3 {
-    public static void start( Scanner in) {
-        System.out.println("task3");
-//          Задана цілочислова матриця
-// An, n, n  20
-// . Розробити програму, яка знаходить і друкує
-// номери тих рядків, елементи яких утворюють симетричні послідовності 1, 2, 3, 3, 2, 1 або 1, 2,
-// 3, 5,3, 2, 1
-        // Scanner in = new Scanner(System.in);
+    public static void start(Scanner in) {
+        System.out.println("\ntask3");
         int n = in.nextInt();
         int[][] a = new int[n][n];
-        for (int i = 0 ; i < n; i++) {
+        System.out.println("enter");
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = in.nextInt();
             }
         }
-        // check symetry
-        
+
         for (int i = 0; i < n; i++) {
             boolean symetry = true;
             for (int j = 0; j < n; j++) {
-                if (a[i][j] != a[j][i]) {
+                if (a[i][j] != a[i][n - j - 1]) {
+
                     symetry = false;
                 }
             }
             if (symetry) {
-            System.out.println("symetry "+i);
+                System.out.println("symetry " + (i + 1));
+            }
         }
-        }
-        //in.close();
-        
 
-        
     }
 }
